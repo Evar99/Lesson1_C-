@@ -21,8 +21,30 @@ void PrintArray(int[] col)
     }
 }
 
+int IndexOf(int[] collection, int find)
+{
+    int count = collection.Length;
+    int index = 0;
+    int position = -1;
+
+    while (index < count)
+    {
+        if (collection[index] ==  find)
+        {
+            position = index;
+            break;
+        }
+        index ++;
+    }
+    return position;
+}
 
 int[] array = new int[10]; //определить массив из 10 элементов
 
 FillArray(array); // наполнили массив случайными числами
 PrintArray(array); // вывести массив
+
+Console.WriteLine();
+
+int pos = IndexOf(array, 444);
+Console.WriteLine(pos);
